@@ -1,0 +1,21 @@
+References: 
+
+
+
+
+ImGUI with raylib visual studio: https://www.youtube.com/watch?v=8x4OyUqLnt0 (Accessed November 18th 2024)
+
+
+ImGUI with GLFW: https://www.youtube.com/watch?v=VRwhNKoxUtk (Accessed November 18th 2024)
+
+
+Raylib: https://github.com/raysan5/raylib (Accessed November 18th 2024)
+
+
+Raylib ImGui: https://github.com/raylib-extras/rlImGui (Accessed November 18th 2024)
+
+
+ImGUI: https://github.com/ocornut/imgui
+
+
+
