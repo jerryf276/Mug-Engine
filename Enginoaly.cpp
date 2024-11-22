@@ -1,6 +1,4 @@
 #include "imgui.h"
-//#include "imgui_impl_glfw.h"
-//#include "imgui_impl_opengl3.h"
 #include "rlImGui.h"
 #include "raylib.h"
 
@@ -15,6 +13,7 @@ int main(void)
     InitWindow(screenWidth, screenHeight, "Enginoaly");
     Image testImage = LoadImage("textures/testMario.png");
     Texture2D testTexture = LoadTextureFromImage(testImage);
+    
     UnloadImage(testImage);
     SetTargetFPS(60);
    // IMGUI_CHECKVERSION();
@@ -31,6 +30,7 @@ int main(void)
         BeginDrawing();
         ClearBackground(RAYWHITE);
         DrawText("Congrats! You created your first window!", 200, 300, 40, BLACK);
+        
         DrawTexture(testTexture, screenWidth / 2 - testTexture.width / 2, screenHeight / 2 - testTexture.height / 2, WHITE);
         rlImGuiBegin();
         ImGui::Begin("Debug", NULL);
@@ -41,6 +41,8 @@ int main(void)
     }
     rlImGuiShutdown();
     UnloadTexture(testTexture);
+
+    
     CloseWindow();
 
     return 0;

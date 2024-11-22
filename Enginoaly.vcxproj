@@ -143,6 +143,8 @@
     <ClCompile Include="dependencies\ImGUI\rlImGui.cpp" />
     <ClCompile Include="Enginoaly.cpp" />
     <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dependencies\ImGUI\imconfig.h" />
@@ -158,6 +160,8 @@
     <ClInclude Include="dependencies\ImGUI\rlImGui.h" />
     <ClInclude Include="dependencies\ImGUI\rlImGuiColors.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Texture.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

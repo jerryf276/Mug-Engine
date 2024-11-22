@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B5B50B3E-EFED-40F0-94D6-A825658CD0BE}|Enginoaly.vcxproj|D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B5B50B3E-EFED-40F0-94D6-A825658CD0BE}|Enginoaly.vcxproj|solutionrelative:Input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5B50B3E-EFED-40F0-94D6-A825658CD0BE}|Enginoaly.vcxproj|D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B5B50B3E-EFED-40F0-94D6-A825658CD0BE}|Enginoaly.vcxproj|solutionrelative:Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5B50B3E-EFED-40F0-94D6-A825658CD0BE}|Enginoaly.vcxproj|D:\\LOCALWORKDIR\\2200611\\CMP316-COURSEWORK\\DEPENDENCIES\\RAYLIB-MASTER\\OUT\\BUILD\\X64-DEBUG\\RAYLIB\\INCLUDE\\RAYLIB.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B5B50B3E-EFED-40F0-94D6-A825658CD0BE}|Enginoaly.vcxproj|solutionrelative:DEPENDENCIES\\RAYLIB-MASTER\\OUT\\BUILD\\X64-DEBUG\\RAYLIB\\INCLUDE\\RAYLIB.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5B50B3E-EFED-40F0-94D6-A825658CD0BE}|Enginoaly.vcxproj|D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B5B50B3E-EFED-40F0-94D6-A825658CD0BE}|Enginoaly.vcxproj|solutionrelative:Texture.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5B50B3E-EFED-40F0-94D6-A825658CD0BE}|Enginoaly.vcxproj|D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Texture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B5B50B3E-EFED-40F0-94D6-A825658CD0BE}|Enginoaly.vcxproj|solutionrelative:Texture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5B50B3E-EFED-40F0-94D6-A825658CD0BE}|Enginoaly.vcxproj|D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\dependencies\\ImGUI\\imgui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B5B50B3E-EFED-40F0-94D6-A825658CD0BE}|Enginoaly.vcxproj|solutionrelative:dependencies\\ImGUI\\imgui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B5B50B3E-EFED-40F0-94D6-A825658CD0BE}|Enginoaly.vcxproj|D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Enginoaly.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B5B50B3E-EFED-40F0-94D6-A825658CD0BE}|Enginoaly.vcxproj|solutionrelative:Enginoaly.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -22,8 +46,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "imgui.cpp",
+              "DocumentMoniker": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\dependencies\\ImGUI\\imgui.cpp",
+              "RelativeDocumentMoniker": "dependencies\\ImGUI\\imgui.cpp",
+              "ToolTip": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\dependencies\\ImGUI\\imgui.cpp",
+              "RelativeToolTip": "dependencies\\ImGUI\\imgui.cpp",
+              "ViewState": "AgIAAJ8lAAAAAAAAAAAiwJ4lAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-22T18:38:10.216Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Input.cpp",
+              "DocumentMoniker": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Input.cpp",
+              "RelativeDocumentMoniker": "Input.cpp",
+              "ToolTip": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Input.cpp",
+              "RelativeToolTip": "Input.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-22T17:48:28.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Input.h",
+              "DocumentMoniker": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Input.h",
+              "RelativeDocumentMoniker": "Input.h",
+              "ToolTip": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Input.h",
+              "RelativeToolTip": "Input.h",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAH0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-22T17:41:37.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Texture.cpp",
+              "DocumentMoniker": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Texture.cpp",
+              "RelativeDocumentMoniker": "Texture.cpp",
+              "ToolTip": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Texture.cpp",
+              "RelativeToolTip": "Texture.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-22T17:36:35.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Texture.h",
+              "DocumentMoniker": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Texture.h",
+              "RelativeDocumentMoniker": "Texture.h",
+              "ToolTip": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Texture.h",
+              "RelativeToolTip": "Texture.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-22T17:31:24.802Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
@@ -31,6 +120,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "raylib.h",
+              "DocumentMoniker": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\dependencies\\raylib-master\\out\\build\\x64-Debug\\raylib\\include\\raylib.h",
+              "RelativeDocumentMoniker": "dependencies\\raylib-master\\out\\build\\x64-Debug\\raylib\\include\\raylib.h",
+              "ToolTip": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\dependencies\\raylib-master\\out\\build\\x64-Debug\\raylib\\include\\raylib.h",
+              "RelativeToolTip": "dependencies\\raylib-master\\out\\build\\x64-Debug\\raylib\\include\\raylib.h",
+              "ViewState": "AgIAAIMCAAAAAAAAAAAAAFACAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-22T16:20:28.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "GameObject.cpp",
               "DocumentMoniker": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\GameObject.cpp",
               "RelativeDocumentMoniker": "GameObject.cpp",
@@ -38,29 +140,31 @@
               "RelativeToolTip": "GameObject.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-22T15:07:42.046Z"
+              "WhenOpened": "2024-11-22T15:07:42.046Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "GameObject.h",
               "DocumentMoniker": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\GameObject.h",
               "RelativeDocumentMoniker": "GameObject.h",
               "ToolTip": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\GameObject.h",
               "RelativeToolTip": "GameObject.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-22T15:04:14.853Z"
+              "WhenOpened": "2024-11-22T15:04:14.853Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Enginoaly.cpp",
               "DocumentMoniker": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Enginoaly.cpp",
               "RelativeDocumentMoniker": "Enginoaly.cpp",
               "ToolTip": "D:\\LocalWorkDir\\2200611\\CMP316-Coursework\\Enginoaly.cpp",
               "RelativeToolTip": "Enginoaly.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-22T14:55:20.971Z",
               "EditorCaption": ""
