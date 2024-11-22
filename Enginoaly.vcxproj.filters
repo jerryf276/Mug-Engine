@@ -48,6 +48,9 @@
     <ClCompile Include="dependencies\ImGUI\imgui_demo.cpp">
       <Filter>Source Files\ImGUI</Filter>
     </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dependencies\ImGUI\rlImGui.h">
@@ -85,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="dependencies\ImGUI\imstb_truetype.h">
       <Filter>Header Files\ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
