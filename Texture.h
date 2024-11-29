@@ -1,10 +1,10 @@
 #pragma once
 #include "raylib.h"
-class Texture
+class EnginoalyTexture
 {
 
 public:
-	Texture(int textureWidth, int textureHeight, )
+	//Texture(int textureWidth, int textureHeight, )
 private:
 
 protected:

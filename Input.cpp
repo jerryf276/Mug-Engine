@@ -14,10 +14,66 @@ bool Input::isKeyPressed(EnginoalyKey key)
     return IsKeyPressed(key);
 }
 
-bool Input::isMousePressed(int button)
+bool Input::isMousePressed(EnginoalyMouse button)
 {
-    if (isMousePressed(button) == true) {
+    if (IsMouseButtonPressed(static_cast<int>(button))) {
         return true;
     }
     return false;
 }
+
+bool Input::isMouseDown(EnginoalyMouse button)
+{
+    if (IsMouseButtonDown(static_cast<int>(button))) {
+        return true;
+    }
+    return false;
+}
+
+bool Input::isMouseUp(EnginoalyMouse button)
+{
+    if (IsMouseButtonUp(static_cast<int>(button))) {
+        return true;
+    }
+    return false;
+}
+
+bool Input::isMouseReleased(EnginoalyMouse button)
+{
+    if (IsMouseButtonReleased(static_cast<int>(button))) {
+        return true;
+    }
+    return false;
+}
+
+Vector2 Input::getMousePosition()
+{
+    return GetMousePosition();
+}
+
+int Input::getMouseX()
+{
+    return GetMouseX();
+}
+
+int Input::getMouseY()
+{
+    return GetMouseY();
+}
+
+void Input::setMousePosition(int x, int y)
+{
+    SetMousePosition(x, y);
+}
+
+Vector2 Input::getMouseWheelMoveVector()
+{
+    return GetMouseWheelMoveV();
+}
+
+int Input::getMouseWheelMove()
+{
+    return GetMouseWheelMove();
+}
+
+
