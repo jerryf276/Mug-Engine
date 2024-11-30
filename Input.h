@@ -141,6 +141,7 @@ class Input
 public:
 	bool isKeyDown(EnginoalyKey key);
 	bool isKeyPressed(EnginoalyKey key);
+	bool isKeyPressedAgain(EnginoalyKey key);
 
     bool isMousePressed(EnginoalyMouse button);
     bool isMouseDown(EnginoalyMouse button);

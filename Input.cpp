@@ -14,6 +14,14 @@ bool Input::isKeyPressed(EnginoalyKey key)
     return IsKeyPressed(key);
 }
 
+bool Input::isKeyPressedAgain(EnginoalyKey key)
+{
+	if (isKeyPressedAgain(key)) {
+		return true;
+    }
+    return false;
+}
+
 bool Input::isMousePressed(EnginoalyMouse button)
 {
     if (IsMouseButtonPressed(static_cast<int>(button))) {
