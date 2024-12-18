@@ -39,6 +39,11 @@ void SoundFX::setSoundPan(Sound sound, float pan)
 	SetSoundPan(sound, pan / 100);
 }
 
+Sound SoundFX::loadSound(const char* fileName)
+{
+	return LoadSound(fileName);
+}
+
 void SoundFX::resumeSound(Sound sound)
 {
 	ResumeSound(sound);
