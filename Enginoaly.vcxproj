@@ -104,13 +104,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>dependencies\raylib-master\src\external\glfw\include\GLFW;dependencies\ImGUI;dependencies\raylib-master\out\build\x64-Debug\raylib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Game;dependencies\raylib-master\src\external\glfw\include\GLFW;dependencies\ImGUI;dependencies\raylib-master\out\build\x64-Debug\raylib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>dependencies\raylib-master\out\build\x64-Debug\raylib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>raylib.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\Debug;dependencies\raylib-master\out\build\x64-Debug\raylib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Game.lib;raylib.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,6 +133,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="DoubleEndedStackAllocator.cpp" />
+    <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="SoundFX.cpp" />
     <ClCompile Include="dependencies\ImGUI\imgui.cpp" />
     <ClCompile Include="dependencies\ImGUI\imgui_demo.cpp" />
@@ -145,9 +148,15 @@
     <ClCompile Include="Enginoaly.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="StackAllocator.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="UniquePointer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="DoubleEndedStackAllocator.h" />
+    <ClInclude Include="Enginoaly.h" />
+    <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="SoundFX.h" />
     <ClInclude Include="dependencies\ImGUI\imconfig.h" />
     <ClInclude Include="dependencies\ImGUI\imgui.h" />
@@ -163,7 +172,14 @@
     <ClInclude Include="dependencies\ImGUI\rlImGuiColors.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="StackAllocator.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="UniquePointer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Game\Game.vcxproj">
+      <Project>{f7011994-d7de-42d9-b1a4-9b4c9af31541}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
