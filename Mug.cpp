@@ -35,6 +35,7 @@ int mainold(void)
         rlImGuiBegin();
         ImGui::Begin("Debug", NULL);
 		ImGui::Text("Hello, world!");
+		ImGui::Text("FPS: %d", GetFPS());
 		ImGui::End();
         rlImGuiEnd();
         EndDrawing();

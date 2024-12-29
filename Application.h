@@ -8,11 +8,11 @@ namespace mug {
 	public:
 
 		virtual void update(float dt) = 0;
-		virtual void render() = 0;
+		virtual void render(RenderSystem * renderSys) = 0;
 	private:
 
 	protected:
-
+	//	RenderSystem* renderSystem;
 	};
 
 	extern Application* createApp();

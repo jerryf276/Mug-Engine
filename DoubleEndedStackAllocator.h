@@ -21,10 +21,10 @@ public:
 
 
 private:
-	void* bottomHead;
-	void* bottomBase;
-	void* topHead;
-	void* topBase;
+	void* bottomHead = nullptr;
+	void* bottomBase = nullptr;
+	void* topHead = nullptr;
+	void* topBase = nullptr;
 
 	//int bottomStackSize;
 	//int topStackSize;

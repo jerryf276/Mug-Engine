@@ -1,6 +1,6 @@
 #include "Input.h"
 
-bool Input::isKeyDown(EnginoalyKey key)
+bool Input::isKeyDown(MugKey key)
 {
     //Static cast to keyboardkey if doesn't work
     if (IsKeyDown(key)) {
@@ -8,13 +8,13 @@ bool Input::isKeyDown(EnginoalyKey key)
     }
 }
 
-bool Input::isKeyPressed(EnginoalyKey key)
+bool Input::isKeyPressed(MugKey key)
 {
     //Static cast to keyboardkey if doesn't work
     return IsKeyPressed(key);
 }
 
-bool Input::isKeyPressedAgain(EnginoalyKey key)
+bool Input::isKeyPressedAgain(MugKey key)
 {
 	if (isKeyPressedAgain(key)) {
 		return true;
@@ -22,7 +22,7 @@ bool Input::isKeyPressedAgain(EnginoalyKey key)
     return false;
 }
 
-bool Input::isMousePressed(EnginoalyMouse button)
+bool Input::isMousePressed(MugMouse button)
 {
     if (IsMouseButtonPressed(static_cast<int>(button))) {
         return true;
@@ -30,7 +30,7 @@ bool Input::isMousePressed(EnginoalyMouse button)
     return false;
 }
 
-bool Input::isMouseDown(EnginoalyMouse button)
+bool Input::isMouseDown(MugMouse button)
 {
     if (IsMouseButtonDown(static_cast<int>(button))) {
         return true;
@@ -38,7 +38,7 @@ bool Input::isMouseDown(EnginoalyMouse button)
     return false;
 }
 
-bool Input::isMouseUp(EnginoalyMouse button)
+bool Input::isMouseUp(MugMouse button)
 {
     if (IsMouseButtonUp(static_cast<int>(button))) {
         return true;
@@ -46,7 +46,7 @@ bool Input::isMouseUp(EnginoalyMouse button)
     return false;
 }
 
-bool Input::isMouseReleased(EnginoalyMouse button)
+bool Input::isMouseReleased(MugMouse button)
 {
     if (IsMouseButtonReleased(static_cast<int>(button))) {
         return true;

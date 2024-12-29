@@ -1,4 +1,5 @@
 #include "Core.h"
+#include <iostream>
 
 namespace mug {
 
@@ -27,7 +28,9 @@ namespace mug {
 	}
 	void Core::render()
 	{
-		mugApp->render();
+		renderSystem->beginDrawing();
+		mugApp->render(renderSystem);
+		renderSystem->endDrawing();
 	}
 	int Core::runEngine()
 	{
@@ -38,6 +41,8 @@ namespace mug {
 		//	renderSystem->clearBackground(RAYWHITE);
 		//	renderSystem->endDrawing();
 			update(renderSystem->getFrameTime());
+		//	int x = renderSystem->getFPS();
+			//std::cout << renderSystem->getFPS();
 			render();
 		}
 		close();
