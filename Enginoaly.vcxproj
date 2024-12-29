@@ -24,6 +24,7 @@
     <ProjectGuid>{b5b50b3e-efed-40f0-94d6-a825658cd0be}</ProjectGuid>
     <RootNamespace>Enginoaly</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Mug</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -104,7 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Game;dependencies\raylib-master\src\external\glfw\include\GLFW;dependencies\ImGUI;dependencies\raylib-master\out\build\x64-Debug\raylib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Game;$(SolutionDir)dependencies\raylib-master\src\external\glfw\include\GLFW;$(SolutionDir)dependencies\ImGUI;$(SolutionDir)dependencies\raylib-master\out\build\x64-Debug\raylib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,8 +134,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Core.cpp" />
     <ClCompile Include="DoubleEndedStackAllocator.cpp" />
+    <ClCompile Include="Entry.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="SoundFX.cpp" />
     <ClCompile Include="dependencies\ImGUI\imgui.cpp" />
@@ -145,7 +147,7 @@
     <ClCompile Include="dependencies\ImGUI\imgui_tables.cpp" />
     <ClCompile Include="dependencies\ImGUI\imgui_widgets.cpp" />
     <ClCompile Include="dependencies\ImGUI\rlImGui.cpp" />
-    <ClCompile Include="Enginoaly.cpp" />
+    <ClCompile Include="Mug.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="StackAllocator.cpp" />
@@ -154,8 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Core.h" />
     <ClInclude Include="DoubleEndedStackAllocator.h" />
-    <ClInclude Include="Enginoaly.h" />
+    <ClInclude Include="Mug.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="SoundFX.h" />
     <ClInclude Include="dependencies\ImGUI\imconfig.h" />

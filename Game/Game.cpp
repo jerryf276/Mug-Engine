@@ -1,6 +1,22 @@
 #include "Game.h"
+#include "RenderSystem.h"
 
-void Game::run()
+mug::Application* mug::createApp()
+{
+	return new Game();
+}
+
+
+void Game::update(float deltaTime)
 {
 	return;
+}
+
+void Game::render()
+{
+}
+
+void Game::debug()
+{
+
 }

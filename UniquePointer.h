@@ -21,6 +21,10 @@ public:
 		delete m_RawPointer;
 	}
 
+	inline UniquePointer<T>(T* uniquePtr) {
+		m_RawPointer = uniquePtr;
+	}
+
 	//inline UniquePointer<T>(NoiseyObject* uniquePtr) {
 	//	m_RawPointer = uniquePtr;
 	//}
