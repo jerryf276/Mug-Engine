@@ -3,11 +3,13 @@
 
 namespace mug {
 
-	Core::Core() : mugApp(mug::createApp())
+	Core::Core() : mugApp(mug::createApp(renderSystem, input))
 	{
 		renderSystem = new RenderSystem();
 		renderSystem->setTargetFPS(60);
-
+		input = new Input();
+		//stackAllocator = new DoubleEndedStackAllocator(size_t(1000000));
+		
 		//renderSystem->initWindow(1280, 720, "Game");
 
 
@@ -15,6 +17,7 @@ namespace mug {
 	void Core::openWindow(int screenWidth, int screenHeight, const char* title)
 	{
 		renderSystem->initWindow(screenWidth, screenHeight, title);
+	//	InitAudioDevice();
 		rlImGuiSetup(true);
 	}
 	void Core::close()
@@ -29,7 +32,7 @@ namespace mug {
 	void Core::render()
 	{
 		renderSystem->beginDrawing();
-		mugApp->render(renderSystem);
+		mugApp->render();
 		renderSystem->endDrawing();
 	}
 	int Core::runEngine()

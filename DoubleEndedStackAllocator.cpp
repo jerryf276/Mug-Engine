@@ -16,11 +16,18 @@ DoubleEndedStackAllocator::~DoubleEndedStackAllocator()
 	free(topBase);
 }
 
-void* DoubleEndedStackAllocator::allocBottomStack(size_t size)
+void* DoubleEndedStackAllocator::allocBottomStack(const std::string& resourceName, size_t size)
 {
+	if (isDuplicated(resourceName)) {
+		return nullptr;
+	}
+
+	sharedStackAllocations.push_back({ size, resourceName });
+
 	//If someone attempts to allocate more space than is available
 	if ((bottomCurrentSize + topCurrentSize) + size > sharedStackSize) {
 		std::cout << "Not enough room in the stack! " << std::endl;
+		throw std::runtime_error("Not enough room in the stack! ");
 		return nullptr;
 	}
 	bottomCurrentSize += size;
@@ -33,11 +40,19 @@ void* DoubleEndedStackAllocator::allocBottomStack(size_t size)
 	return nullptr;
 }
 
-void* DoubleEndedStackAllocator::allocTopStack(size_t size)
+void* DoubleEndedStackAllocator::allocTopStack(const std::string& resourceName, size_t size)
 {
+	if (isDuplicated(resourceName)) {
+		return nullptr;
+	}
+
+
+	sharedStackAllocations.push_back({ size, resourceName });
+
 	//If someone attempts to allocate more space than is available
 	if ((bottomCurrentSize + topCurrentSize) + size > sharedStackSize) {
 		std::cout << "Not enough room in the stack! " << std::endl;
+		throw std::runtime_error("Not enough room in the stack! ");
 		return nullptr;
 	}
 	topCurrentSize += size;
@@ -49,6 +64,20 @@ void* DoubleEndedStackAllocator::allocTopStack(size_t size)
 	topStackArray[topStackElements] = size;
 	return nullptr;
 }
+
+bool DoubleEndedStackAllocator::isDuplicated(const std::string& resourceName)
+{
+	for (const auto& data : sharedStackAllocations) {
+		if (data.resourceName == resourceName) {
+			std::cout << "Resource already allocated!" << std::endl;
+			throw(std::runtime_error("Resource already allocated!"));
+			return true;
+		}
+	}
+	return false;
+}
+
+
 
 void* DoubleEndedStackAllocator::rollBackBottomStack(int dist)
 {

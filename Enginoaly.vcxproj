@@ -134,11 +134,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="DoubleEndedStackAllocator.cpp" />
     <ClCompile Include="Entry.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
-    <ClCompile Include="SoundFX.cpp" />
     <ClCompile Include="dependencies\ImGUI\imgui.cpp" />
     <ClCompile Include="dependencies\ImGUI\imgui_demo.cpp" />
     <ClCompile Include="dependencies\ImGUI\imgui_draw.cpp" />
@@ -156,11 +156,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Audio.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="DoubleEndedStackAllocator.h" />
     <ClInclude Include="Mug.h" />
     <ClInclude Include="RenderSystem.h" />
-    <ClInclude Include="SoundFX.h" />
     <ClInclude Include="dependencies\ImGUI\imconfig.h" />
     <ClInclude Include="dependencies\ImGUI\imgui.h" />
     <ClInclude Include="dependencies\ImGUI\imgui_impl_glfw.h" />

@@ -1,14 +1,17 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <string>
 class DoubleEndedStackAllocator
 {
 public:
 	DoubleEndedStackAllocator(size_t maxSize);
 	~DoubleEndedStackAllocator();
 
-	void* allocBottomStack(size_t size);
-	void* allocTopStack(size_t size);
+	void* allocBottomStack(const std::string& resourceName, size_t size);
+	void* allocTopStack(const std::string& resourceName, size_t size);
+
+	bool isDuplicated(const std::string& resourceName);
 
 	void* rollBackBottomStack(int dist);
 	void* rollBackTopStack(int dist);
@@ -20,11 +23,13 @@ public:
 	void* popTopStack(size_t size);
 
 
+
+
 private:
-	void* bottomHead = nullptr;
-	void* bottomBase = nullptr;
-	void* topHead = nullptr;
-	void* topBase = nullptr;
+	void* bottomHead;
+	void* bottomBase;
+	void* topHead;
+	void* topBase;
 
 	//int bottomStackSize;
 	//int topStackSize;
@@ -38,6 +43,14 @@ private:
 
 	std::vector<int> bottomStackArray;
 	std::vector<int> topStackArray;
+
+	struct allocationData
+	{
+		size_t size;
+		std::string resourceName;
+	};
+
+	std::vector<allocationData> sharedStackAllocations;
 
 protected:
 

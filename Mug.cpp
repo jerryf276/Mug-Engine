@@ -11,8 +11,10 @@ int mainold(void)
  
 
     InitWindow(screenWidth, screenHeight, "Enginoaly");
+    InitAudioDevice();
     Image testImage = LoadImage("textures/testMario.png");
     Texture2D testTexture = LoadTextureFromImage(testImage);
+	Sound sound = LoadSound("Game/Assets/Audio/coin.wav");
     
     UnloadImage(testImage);
     SetTargetFPS(60);
@@ -27,6 +29,11 @@ int mainold(void)
 
     while (!WindowShouldClose())
     {
+        if (IsKeyPressed(KEY_SPACE))
+        {
+            PlaySound(sound);
+        }
+
         BeginDrawing();
         ClearBackground(RAYWHITE);
         DrawText("Congrats! You created your first window!", 200, 300, 40, BLACK);

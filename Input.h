@@ -1,5 +1,6 @@
 #pragma once
 #include "raylib.h"
+#include <vector>
 
 typedef enum {
     MUG_KEY_NULL = 0,        // Key: NULL, used for no key pressed
@@ -143,6 +144,8 @@ public:
 	bool isKeyPressed(MugKey key);
 	bool isKeyPressedAgain(MugKey key);
 
+    //bool keyToggle(MugKey key);
+
     bool isMousePressed(MugMouse button);
     bool isMouseDown(MugMouse button);
     bool isMouseUp(MugMouse button);
@@ -157,13 +160,25 @@ public:
     Vector2 getMouseWheelMoveVector();
     int getMouseWheelMove();
 
+    Input();
 	//void setKeyUp(int key);
 	//void setKeyDown(int key);
 
 private:
 	//bool keys[256]; //Array for storing key states
 	//bool keyStillHeld[256];
+   // bool keyToggler = false;
 
+	//std::map<MugKey, bool> keyToggler;
+  //  std::map<MugKey, bool> keyPressedLastFrame;
+	//std::vector<bool> keyToggler;
+	//std::vector<bool> keyPressedLastFrame;
+
+	//keyToggler.resize(MUG_KEY_VOLUME_DOWN + 1);
+	//keyPressedLastFrame.resize(MUG_KEY_VOLUME_DOWN + 1);
+
+
+   // keyToggler.resize();
         
 protected:
 

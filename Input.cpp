@@ -16,11 +16,48 @@ bool Input::isKeyPressed(MugKey key)
 
 bool Input::isKeyPressedAgain(MugKey key)
 {
-	if (isKeyPressedAgain(key)) {
-		return true;
-    }
-    return false;
+    return IsKeyPressedRepeat(key);
 }
+
+//bool Input::keyToggle(MugKey key)
+//{
+//    //if (isKeyPressedAgain(key) == false) {
+//    //    if (isKeyPressed(key)) {
+//    //      //  keyToggler = true;
+//    //        return true;
+//    //    }
+//    //    else {
+//    //        return false;
+//    //    }
+//    //}
+//
+//    //if (isKeyPressedAgain(key) == true) {
+//    //    return false;
+//    //}
+//	
+//	//if (isKeyPressed(key)) {
+// //       if (keyToggler[key] == false) {
+//	//		keyToggler[key] = true;
+//	//		return true;
+//	//	}
+// //       else {
+//	//		keyToggler[key] = false;
+//	//		return false;
+//	//	}
+//	//}
+//	//return false;
+//
+//
+//    if (isKeyPressed(key) && !keyPressedLastFrame[key]) {
+//        keyToggler[key] = !keyToggler[key];
+//    }
+//
+//	keyPressedLastFrame[key] = isKeyPressed(key);
+//
+//
+//	return keyToggler[key];
+//}
+
 
 bool Input::isMousePressed(MugMouse button)
 {
@@ -82,6 +119,15 @@ Vector2 Input::getMouseWheelMoveVector()
 int Input::getMouseWheelMove()
 {
     return GetMouseWheelMove();
+}
+
+Input::Input()
+{
+ //   constexpr int maxKeyValue = 348;
+	//keyToggler.resize(maxKeyValue + 1, false);
+	//keyPressedLastFrame.resize(maxKeyValue + 1, false);
+
+
 }
 
 
