@@ -1,6 +1,8 @@
 #include "Game.h"
 #include "RenderSystem.h"
 #include <iostream>
+#include "SceneOne.h"
+#include "SceneTwo.h"
 
 mug::Application* mug::createApp(RenderSystem* renderSys, Input* input)
 {
@@ -13,19 +15,23 @@ Game::Game(RenderSystem* renderSys, Input * ipt)
 	renderer = renderSys;
 	input = ipt;
 
+
 	InitAudioDevice();
 	musicPlayer = new MusicPlayer();
 	soundFX = new SoundFX();
-	soundFX->setSound(soundFX->loadSound("Game/Assets/Audio/coin.wav", "coin", stack));
-	//soundFX->loadSound("Game/Assets/Audio/coin.wav", "coin", stack);
-	//musicPlayer->loadMusicStream("Game/Assets/Audio/cisco-default-hold-music-[hq-mono-audio]-opus-number-1-made-with-Voicemod.mp3", "music", stack);
+	gameState = new GameState();
 
-	musicPlayer->setMusic(musicPlayer->loadMusicStream("Game/Assets/Audio/cisco-default-hold-music-[hq-mono-audio]-opus-number-1-made-with-Voicemod.mp3", "music", stack));
+
+	sceneOne = new SceneOne(input, renderer, gameState, soundFX, musicPlayer);
+	sceneTwo = new SceneTwo(input, renderer, gameState, soundFX, musicPlayer);
+
+
+	
 
 	
 	//musicPlayer->loadMusicStream("Assets/Audio/cisco-default-hold-music-[hq-mono-audio]-opus-number-1-made-with-Voicemod.mp3", "music", stack);
 
-	
+	gameState->setCurrentState(State::SCENE_ONE);
 //	renderSystem->setTargetFPS(60);
 }
 
@@ -37,68 +43,29 @@ Game::~Game()
 
 void Game::update(float deltaTime)
 {
-	musicPlayer->updateMusicStream(musicPlayer->getMusic());
-	if (input->isKeyPressed(MUG_KEY_B))
-	{
-		soundFX->playSound(soundFX->getSound());
+
+	if (gameState->getCurrentState() == State::SCENE_ONE) {
+		sceneOne->update(deltaTime);
+	}
+	else if (gameState->getCurrentState() == State::SCENE_TWO) {
+		sceneTwo->update(deltaTime);
 	}
 
-	if (!musicPlayer->isMusicPlaying(musicPlayer->getMusic())) {
-		musicPlayer->playMusic(musicPlayer->getMusic());
-	}
 }
 
 void Game::render()
 {
-	//renderer = renderSys;
-	renderer->clearBackground(RED);
 
-	if (keyHit == false) {
-		if (input->isKeyPressed(MUG_KEY_A))
-		{
-			keyHit = true;
-			//renderer->drawText("A is pressed", 10, 10, 20, BLACK);
-		}
+	if (gameState->getCurrentState() == State::SCENE_ONE) {
+		sceneOne->render();
 	}
-	else {
-		if (input->isKeyPressed(MUG_KEY_A))
-		{
-			keyHit = false;
-		}
-		
-		else {
-			renderer->drawText("A is pressed", 10, 10, 20, BLACK);
-		}
+	else if (gameState->getCurrentState() == State::SCENE_TWO) {
+		sceneTwo->render();
 	}
-
-	//if (input->isKeyPressed(MUG_KEY_B))
-	//{
-	//	soundFX->playSound(soundFX->getSound());
-	//}	
-
-	//if (!musicPlayer->isMusicPlaying(musicPlayer->getMusic())) {
-	//	musicPlayer->playMusic(musicPlayer->getMusic());
-	//}
-	//std::cout << renderSystem->getFPS() << std::endl;
-	//s/td::cout << "Hello, world!" << std::endl;
-
-	//int x = renderer->getFPS();
-//	std::cout << x << std::endl;
-
-	debug();
+	else if (gameState->getCurrentState() == State::EXIT) {
+		renderer->closeWindow();
+	}
 	
-}
-
-void Game::debug()
-{
-	//ImGui stuff goes here!
-	rlImGuiBegin();
-	ImGui::Begin("Debug", NULL);
-	ImGui::Text("Hello, world!");
-	ImGui::Text("FPS: %d", renderer->getFPS());
-	ImGui::End();
-	rlImGuiEnd();
-
 }
 
 

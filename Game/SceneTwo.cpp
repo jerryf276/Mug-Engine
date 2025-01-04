@@ -1,0 +1,44 @@
+#include "SceneTwo.h"
+
+SceneTwo::SceneTwo(Input* input, RenderSystem* renderSys, GameState* state, SoundFX* snd, MusicPlayer* muse)
+{
+	this->input = input;
+	this->renderer = renderSys;
+	this->gameState = state;
+	this->sound = snd;
+	this->music = muse;
+}
+
+SceneTwo::~SceneTwo()
+{
+	delete input;
+	delete renderer;
+	delete gameState;
+	delete sound;
+	delete music;
+}
+
+void SceneTwo::update(float dt)
+{
+	if (input->isKeyPressed(MUG_KEY_O)) {
+		gameState->setCurrentState(State::SCENE_ONE);
+	}
+	else if (input->isKeyPressed(MUG_KEY_ESCAPE)) {
+		gameState->setCurrentState(State::EXIT);
+	}
+}
+
+void SceneTwo::render()
+{
+	renderer->clearBackground(RED);
+	renderer->drawText("Welcome to scene two! ", 300, 300, 20, BLACK);
+	debug();
+}
+
+void SceneTwo::debug()
+{
+	rlImGuiBegin();
+	ImGui::Begin("Debug", NULL);
+	ImGui::End();
+	rlImGuiEnd();
+}

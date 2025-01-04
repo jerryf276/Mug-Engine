@@ -3,6 +3,7 @@
 #include "DoubleEndedStackAllocator.h"
 #include <string>
 #include <stdexcept>
+#include <vector>
 class SoundFX
 {
 public:
@@ -23,9 +24,10 @@ public:
 	Sound getSound();
 	void setSound(Sound);
 
-
 private:
 	Sound sound;
+	std::vector<Sound> sounds;
+
 protected:
 
 };
@@ -53,6 +55,7 @@ public:
 	Music getMusic();
 private:
 	Music music;
+	std::vector<Music> musics;
 protected:
 
 };
