@@ -12,11 +12,13 @@ int mainold(void)
 
     InitWindow(screenWidth, screenHeight, "Enginoaly");
     InitAudioDevice();
-    Image testImage = LoadImage("textures/testMario.png");
-    Texture2D testTexture = LoadTextureFromImage(testImage);
+    //Image testImage = LoadImage("Game/Assets/Images/Penguin-images-2/Animations/penguin_jump01.png");
+   // Texture2D testTexture = LoadTextureFromImage(testImage);
+	Texture2D testTexture = LoadTexture("Game/Assets/Images/Penguin-images-2/Animations/penguin_jump01.png");
+
 	Sound sound = LoadSound("Game/Assets/Audio/coin.wav");
     
-    UnloadImage(testImage);
+    //UnloadImage(testImage);
     SetTargetFPS(60);
    // IMGUI_CHECKVERSION();
 	//ImGui::CreateContext();

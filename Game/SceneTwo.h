@@ -6,6 +6,7 @@ public:
 	SceneTwo(Input* input, RenderSystem* renderSys, GameState* state, SoundFX* snd, MusicPlayer* muse);
 	~SceneTwo();
 
+	void initialise();
 	void update(float dt);
 	void render();
 	void debug();

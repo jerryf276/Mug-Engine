@@ -6,7 +6,7 @@ namespace mug {
 	class Application
 	{
 	public:
-
+		virtual void initialise() = 0;
 		virtual void update(float dt) = 0;
 		virtual void render() = 0;
 	private:

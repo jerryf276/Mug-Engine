@@ -25,7 +25,7 @@ Game::Game(RenderSystem* renderSys, Input * ipt)
 	sceneOne = new SceneOne(input, renderer, gameState, soundFX, musicPlayer);
 	sceneTwo = new SceneTwo(input, renderer, gameState, soundFX, musicPlayer);
 
-
+	
 	
 
 	
@@ -38,6 +38,16 @@ Game::Game(RenderSystem* renderSys, Input * ipt)
 Game::~Game()
 {
 	delete renderer;
+}
+
+
+void Game::initialise()
+{
+	//Feel free to change your window icon here!
+	SetWindowIcon(LoadImage("Game/Assets/Images/logo.png"));
+
+	sceneOne->initialise();
+	sceneTwo->initialise();
 }
 
 
@@ -65,7 +75,7 @@ void Game::render()
 	else if (gameState->getCurrentState() == State::EXIT) {
 		renderer->closeWindow();
 	}
-	
 }
+
 
 

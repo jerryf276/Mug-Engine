@@ -1,5 +1,8 @@
 #pragma once
 #include "raylib.h"
+#include "GameObject.h"
+#include "SpriteComponent.h"
+#include "TransformComponent.h"
 class RenderSystem
 {
 public:
@@ -28,6 +31,11 @@ public:
 	int getScreenWidth();
 	int getScreenHeight();
 	int getMonitorCount();
+
+
+	void render(GameObject * gameObject);
+
+
 
 
 	

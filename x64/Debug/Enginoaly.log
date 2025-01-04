@@ -1,2 +1,9 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Enginoaly.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  InputComponent.cpp
+C:\Users\voaly\Documents\GitHub\CMP316-Coursework\Input.h(124,1): warning C4005: 'MOUSE_LEFT_BUTTON': macro redefinition
+C:\Users\voaly\Documents\GitHub\CMP316-Coursework\dependencies\raylib-master\out\build\x64-Debug\raylib\include\raylib.h(694,1): message : see previous definition of 'MOUSE_LEFT_BUTTON'
+C:\Users\voaly\Documents\GitHub\CMP316-Coursework\Input.h(125,1): warning C4005: 'MOUSE_RIGHT_BUTTON': macro redefinition
+C:\Users\voaly\Documents\GitHub\CMP316-Coursework\dependencies\raylib-master\out\build\x64-Debug\raylib\include\raylib.h(695,1): message : see previous definition of 'MOUSE_RIGHT_BUTTON'
+C:\Users\voaly\Documents\GitHub\CMP316-Coursework\Input.h(126,1): warning C4005: 'MOUSE_MIDDLE_BUTTON': macro redefinition
+C:\Users\voaly\Documents\GitHub\CMP316-Coursework\dependencies\raylib-master\out\build\x64-Debug\raylib\include\raylib.h(696,1): message : see previous definition of 'MOUSE_MIDDLE_BUTTON'
   Enginoaly.vcxproj -> C:\Users\voaly\Documents\GitHub\CMP316-Coursework\x64\Debug\Mug.exe

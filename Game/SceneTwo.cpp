@@ -18,6 +18,11 @@ SceneTwo::~SceneTwo()
 	delete music;
 }
 
+void SceneTwo::initialise()
+{
+
+}
+
 void SceneTwo::update(float dt)
 {
 	if (input->isKeyPressed(MUG_KEY_O)) {
@@ -39,6 +44,7 @@ void SceneTwo::debug()
 {
 	rlImGuiBegin();
 	ImGui::Begin("Debug", NULL);
+	ImGui::Text("FPS: %d", GetFPS());
 	ImGui::End();
 	rlImGuiEnd();
 }

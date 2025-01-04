@@ -135,9 +135,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Audio.cpp" />
+    <ClCompile Include="Component.cpp" />
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="DoubleEndedStackAllocator.cpp" />
     <ClCompile Include="Entry.cpp" />
+    <ClCompile Include="InputComponent.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="dependencies\ImGUI\imgui.cpp" />
     <ClCompile Include="dependencies\ImGUI\imgui_demo.cpp" />
@@ -150,15 +152,19 @@
     <ClCompile Include="Mug.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="SpriteComponent.cpp" />
     <ClCompile Include="StackAllocator.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TransformComponent.cpp" />
     <ClCompile Include="UniquePointer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="Audio.h" />
+    <ClInclude Include="Component.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="DoubleEndedStackAllocator.h" />
+    <ClInclude Include="InputComponent.h" />
     <ClInclude Include="Mug.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="dependencies\ImGUI\imconfig.h" />
@@ -175,8 +181,10 @@
     <ClInclude Include="dependencies\ImGUI\rlImGuiColors.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="SpriteComponent.h" />
     <ClInclude Include="StackAllocator.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="UniquePointer.h" />
   </ItemGroup>
   <ItemGroup>

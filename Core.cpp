@@ -35,9 +35,14 @@ namespace mug {
 		mugApp->render();
 		renderSystem->endDrawing();
 	}
+	void Core::initialise()
+	{
+		mugApp->initialise();
+	}
 	int Core::runEngine()
 	{
 		openWindow(1280, 720, "Mug Engine");
+		initialise();
 		while (!renderSystem->windowShouldClose())
 		{
 		//	renderSystem->beginDrawing();

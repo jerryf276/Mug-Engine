@@ -120,6 +120,18 @@ int RenderSystem::getMonitorCount()
 	return GetMonitorCount();
 }
 
+void RenderSystem::render(GameObject* gameObject)
+{
+	auto transform = gameObject->GetComponent<TransformComponent>();
+	auto sprite = gameObject->GetComponent<SpriteComponent>();
+	if (transform && sprite)
+	{
+		DrawTexture(sprite->getSprite(), transform->getPosition().x, transform->getPosition().y, WHITE);
+	}
+	
+
+}
+
 
 
 //void RenderSystem::toggleMinimized()

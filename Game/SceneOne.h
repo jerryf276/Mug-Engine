@@ -1,11 +1,13 @@
 #pragma once
 #include "Game.h"
+#include "InputComponent.h"
 class SceneOne
 {
 public:
 	SceneOne(Input* input, RenderSystem* renderSys, GameState * state, SoundFX * snd, MusicPlayer * muse);
 	~SceneOne();
 
+	void initialise();
 	void update(float dt);
 	void render();
 	void debug();
@@ -22,4 +24,5 @@ protected:
 	GameState* gameState;
 	SoundFX* sound;
 	MusicPlayer* music;
+	GameObject * player;
 };

@@ -7,6 +7,7 @@
 #include "Application.h"
 #include "Audio.h"
 #include "DoubleEndedStackAllocator.h"
+#include "GameObject.h"
 namespace mug {
 	class Core
 	{
@@ -19,6 +20,7 @@ namespace mug {
 		void close();
 		void update(float dt);
 		void render();
+		void initialise();
 
 		
 		//void BeginDrawing();
