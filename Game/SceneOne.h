@@ -25,4 +25,6 @@ protected:
 	SoundFX* sound;
 	MusicPlayer* music;
 	GameObject * player;
+	Camera2D* camera;
+
 };

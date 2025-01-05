@@ -22,21 +22,25 @@ void* DoubleEndedStackAllocator::allocBottomStack(const std::string& resourceNam
 		return nullptr;
 	}
 
-	sharedStackAllocations.push_back({ size, resourceName });
-
 	//If someone attempts to allocate more space than is available
 	if ((bottomCurrentSize + topCurrentSize) + size > sharedStackSize) {
 		std::cout << "Not enough room in the stack! " << std::endl;
 		throw std::runtime_error("Not enough room in the stack! ");
 		return nullptr;
 	}
+
 	bottomCurrentSize += size;
 	if (bottomBase == nullptr) {
 		bottomBase = new size_t(size);
 	}
 	bottomHead = new size_t(size);
 	bottomStackElements++;
+	sharedStackElements++;
 	bottomStackArray[bottomStackElements] = size;
+//	bottomStackAllocations[bottomStackElements] = { size, resourceName };
+//	sharedStackAllocations[sharedStackElements] = { size, resourceName };
+	sharedStackAllocations.push_back({ size, resourceName });
+	bottomStackAllocations.push_back({ size, resourceName });
 	return nullptr;
 }
 
@@ -47,7 +51,6 @@ void* DoubleEndedStackAllocator::allocTopStack(const std::string& resourceName, 
 	}
 
 
-	sharedStackAllocations.push_back({ size, resourceName });
 
 	//If someone attempts to allocate more space than is available
 	if ((bottomCurrentSize + topCurrentSize) + size > sharedStackSize) {
@@ -55,13 +58,23 @@ void* DoubleEndedStackAllocator::allocTopStack(const std::string& resourceName, 
 		throw std::runtime_error("Not enough room in the stack! ");
 		return nullptr;
 	}
+
+
+//	sharedStackAllocations.push_back({ size, resourceName });
+	//topStackAllocations.push_back({ size, resourceName });
+
 	topCurrentSize += size;
 	if (topBase == nullptr) {
 		topBase = new size_t(size);
 	}
 	topHead = new size_t(size);
 	topStackElements++;
+	sharedStackElements++;
 	topStackArray[topStackElements] = size;
+	//topStackAllocations[topStackElements] = { size, resourceName };
+	//sharedStackAllocations[sharedStackElements] = { size, resourceName };
+	sharedStackAllocations.push_back({ size, resourceName });
+	topStackAllocations.push_back({ size, resourceName });
 	return nullptr;
 }
 
@@ -114,8 +127,16 @@ void DoubleEndedStackAllocator::clearBottomStack()
 
 	for (int i = 0; i < bottomStackElements; i++) {
 		//free(bottomHead);
+		for (int j = 0; j < sharedStackAllocations.size(); j++) {
+			if (sharedStackAllocations[j].resourceName == bottomStackAllocations[i].resourceName) {
+				bottomStackAllocations.erase(bottomStackAllocations.begin() + i);
+				sharedStackAllocations.erase(sharedStackAllocations.begin() + j);
+
+			}
+		}
 		bottomCurrentSize -= bottomStackArray[i];
 		bottomStackElements--;
+		
 	}
 	//free(bottomBase);
 }
@@ -125,6 +146,12 @@ void DoubleEndedStackAllocator::clearTopStack()
 	free(topHead);
 	for (int i = 0; i < topStackElements; i++) {
 		//free(topHead);
+		for (int j = 0; j < sharedStackAllocations.size(); j++) {
+			if (sharedStackAllocations[j].resourceName == topStackAllocations[i].resourceName) {
+				topStackAllocations.erase(topStackAllocations.begin() + i);
+				sharedStackAllocations.erase(sharedStackAllocations.begin() + j);
+			}
+		}
 		topCurrentSize -= topStackArray[i];
 		topStackElements--;
 	}
@@ -136,6 +163,15 @@ void* DoubleEndedStackAllocator::popBottomStack(size_t size)
 	if (bottomCurrentSize < 0) {
 		std::cout << "There is nothing to deallocate!" << std::endl;
 		return nullptr;
+	}
+
+	for (int i = 0; i < sharedStackAllocations.size(); i++) {
+		for (int j = 0; j < bottomStackAllocations.size(); j++) {
+			if (sharedStackAllocations[i].resourceName == bottomStackAllocations[j].resourceName) {
+				sharedStackAllocations.erase(sharedStackAllocations.begin() + i);
+				bottomStackAllocations.erase(bottomStackAllocations.begin() + j);
+			}
+		}
 	}
 
 	bottomCurrentSize -= size;
@@ -162,6 +198,15 @@ void* DoubleEndedStackAllocator::popTopStack(size_t size)
 	if (topCurrentSize < 0) {
 		std::cout << "There is nothing to deallocate!" << std::endl;
 		return nullptr;
+	}
+
+	for (int i = 0; i < sharedStackAllocations.size(); i++) {
+		for (int j = 0; j < topStackAllocations.size(); j++) {
+			if (sharedStackAllocations[i].resourceName == topStackAllocations[j].resourceName) {
+				sharedStackAllocations.erase(sharedStackAllocations.begin() + i);
+				topStackAllocations.erase(topStackAllocations.begin() + j);
+			}
+		}
 	}
 	topCurrentSize -= size;
 	topStackElements--;

@@ -22,6 +22,12 @@ SceneOne::SceneOne(Input* input, RenderSystem* renderSys, GameState* state, Soun
 	player = new GameObject();
 	//player->setTexture(renderer->loadTexture("Game/Assets/Textures/coin.png", "coin", stack));
 	
+	camera = new Camera2D();
+	camera->offset = { 0, 0 };
+	camera->target = { 0, 0 };
+	camera->rotation = 0.0f;
+	camera->zoom = 1.0f;
+
 
 	
 }
@@ -98,8 +104,10 @@ void SceneOne::render()
 			renderer->drawText("G is pressed", 10, 10, 20, BLACK);
 		}
 	}
+	renderer->beginDrawingWithCamera2D(camera);
 	/*player->render();*/
 	renderer->render(player);
+	renderer->endDrawingWithCamera2D();
 	debug();
 }
 

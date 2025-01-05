@@ -40,6 +40,7 @@ private:
 
 	int bottomStackElements = -1;
 	int topStackElements = -1;
+	int sharedStackElements = -1;
 
 	std::vector<int> bottomStackArray;
 	std::vector<int> topStackArray;
@@ -51,6 +52,9 @@ private:
 	};
 
 	std::vector<allocationData> sharedStackAllocations;
+	std::vector<allocationData> bottomStackAllocations;
+	std::vector<allocationData> topStackAllocations;
+
 
 protected:
 

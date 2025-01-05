@@ -20,7 +20,7 @@ public:
 	~Game();
 
 private:
-	DoubleEndedStackAllocator* stack = new DoubleEndedStackAllocator(size_t(1000000));
+	DoubleEndedStackAllocator* stack = new DoubleEndedStackAllocator(size_t(10000));
 	int test = 0;
 	//RenderSystem* renderer = new RenderSystem();
 	bool keyHit = false;

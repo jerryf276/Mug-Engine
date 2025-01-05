@@ -31,12 +31,18 @@ public:
 	int getScreenWidth();
 	int getScreenHeight();
 	int getMonitorCount();
+	Camera2D * getCamera2D();
+	void setCamera2D(Camera2D * camera);
+
+
+	void beginDrawingWithCamera2D(Camera2D * camera);
+	void endDrawingWithCamera2D();
 
 
 	void render(GameObject * gameObject);
 
 
-
+	
 
 	
 //	void toggleResizable();
@@ -51,6 +57,7 @@ public:
 	//void setMasterVolume(float volume);
 
 private:
+	Camera2D * camera;
 
 protected:
 

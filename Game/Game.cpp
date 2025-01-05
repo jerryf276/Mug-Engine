@@ -61,6 +61,7 @@ void Game::update(float deltaTime)
 		sceneTwo->update(deltaTime);
 	}
 
+	
 }
 
 void Game::render()

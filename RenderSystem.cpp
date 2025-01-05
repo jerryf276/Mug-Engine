@@ -132,7 +132,27 @@ void RenderSystem::render(GameObject* gameObject)
 
 }
 
+Camera2D * RenderSystem::getCamera2D()
+{
+	return camera;
+}
 
+void RenderSystem::setCamera2D(Camera2D * camera)
+{
+	this->camera = camera;
+}
+
+void RenderSystem::beginDrawingWithCamera2D(Camera2D * camera)
+{
+	//BeginDrawing();
+	BeginMode2D(*camera);
+}
+
+void RenderSystem::endDrawingWithCamera2D()
+{
+	EndMode2D();
+	//EndDrawing();
+}
 
 //void RenderSystem::toggleMinimized()
 //{

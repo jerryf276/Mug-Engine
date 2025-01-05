@@ -32,7 +32,7 @@ void SpriteComponent::start()
 
 void SpriteComponent::update(float dt)
 {
-
+	
 }
 
 void SpriteComponent::render()
@@ -50,9 +50,16 @@ Texture2D SpriteComponent::loadTexture(const char* filename, std::string givenNa
 {
 	try {
 		stack->allocTopStack(givenName, sizeof(Texture2D));
-		return LoadTexture(filename);
+		//Image img = LoadImageFromMemory(filename);
+		Image img = LoadImage(filename);
+		stack->allocTopStack(givenName + givenName, sizeof(img));
+		Texture2D texture = LoadTextureFromImage(img);
+		UnloadImage(img);
+		stack->rollBackTopStack(1);
+		return texture;
 	}
 	catch (std::runtime_error& e) {
+		
 		std::cout << e.what() << std::endl;
 	}
 	return LoadTexture("There is issues with the stack!");
