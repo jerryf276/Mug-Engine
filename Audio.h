@@ -13,7 +13,6 @@ public:
 	void stopSound(Sound);
 	void pauseSound(Sound);
 	void resumeSound(Sound);
-	//void pauseSound(Sound);
 	bool isSoundPlaying(Sound);
 	void setSoundVolume(Sound, float); //Set the volume of a sound, loudest volume is 100.0f
 	void setSoundPitch(Sound, float); //Set the pitch of a sound, highest pitch is 100.0f
@@ -22,11 +21,11 @@ public:
 	void unloadSound(Sound);
 
 	Sound getSound();
-	void setSound(Sound);
+	void setSound(Sound sound);
 
 private:
 	Sound sound;
-	std::vector<Sound> sounds;
+//	std::vector<Sound> sounds;
 
 protected:
 

@@ -20,6 +20,7 @@ SceneOne::SceneOne(Input* input, RenderSystem* renderSys, GameState* state, Soun
 
 
 	player = new GameObject();
+	player->setAlive(true);
 	//player->setTexture(renderer->loadTexture("Game/Assets/Textures/coin.png", "coin", stack));
 	
 	camera = new Camera2D();
@@ -80,8 +81,21 @@ void SceneOne::update(float dt)
 		music->playMusic(music->getMusic());
 	}
 
-	player->update(dt);
-}
+	if (player->isAlive()) {
+		player->update(dt);
+	}
+
+	if (player->isAlive()) {
+		if (input->isKeyPressed(MUG_KEY_K)) {
+			player->setAlive(false);
+		}
+	}
+	else {
+		if (input->isKeyPressed(MUG_KEY_R)) {
+			player->setAlive(true);
+		}
+	}
+	}
 
 void SceneOne::render()
 {
@@ -104,11 +118,30 @@ void SceneOne::render()
 			renderer->drawText("G is pressed", 10, 10, 20, BLACK);
 		}
 	}
+
+	if (player->isAlive()) 
+	{
+		renderer->drawText("Press K to Kill the player", 800, 100, 20, RED);
+	}
+	else {
+		renderer->drawText("Press R to Revive the player", 800, 100, 20, GREEN);
+	}
+	
+
 	renderer->beginDrawingWithCamera2D(camera);
 	/*player->render();*/
-	renderer->render(player);
+	if (player->isAlive()) 
+	{
+		renderer->render(player);
+	}
+	
 	renderer->endDrawingWithCamera2D();
 	debug();
+
+
+	renderer->drawText("Press P to show scene two! ", 300, 500, 40, BLACK);
+
+	renderer->drawText("Press B to play sound effect! ", 300, 600, 20, BLACK);
 }
 
 void SceneOne::debug()
@@ -118,6 +151,9 @@ void SceneOne::debug()
 	ImGui::Begin("Debug", NULL);
 	ImGui::Text("Hello, welcome to the debug menu!");
 	ImGui::Text("FPS: %d", GetFPS());
+	if (ImGui::Button("Reset player position")) {
+		player->GetComponent<TransformComponent>()->setPosition({ 550, 340 });
+	}
 	ImGui::End();
 	rlImGuiEnd();
 }

@@ -62,10 +62,17 @@ Sound SoundFX::getSound()
 	return sound;
 }
 
-void SoundFX::setSound(Sound snd)
+void SoundFX::setSound(Sound sound)
 {
-	sound = snd;
+	this->sound = sound;
 }
+
+//void SoundFX::setSound(Sound snd)
+//{
+//	sound = snd;
+//}
+
+
 
 void MusicPlayer::playMusic(Music music)
 {

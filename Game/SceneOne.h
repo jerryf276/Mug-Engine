@@ -13,7 +13,8 @@ public:
 	void debug();
 
 private:
-	DoubleEndedStackAllocator* stack = new DoubleEndedStackAllocator(size_t(10000));
+	//Feel free to increase the stack size if you need more memory!
+	DoubleEndedStackAllocator* stack = new DoubleEndedStackAllocator(size_t(200));
 	int test = 0;
 
 	bool keyHit = false;

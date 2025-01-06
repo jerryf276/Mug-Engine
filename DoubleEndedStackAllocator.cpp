@@ -39,6 +39,8 @@ void* DoubleEndedStackAllocator::allocBottomStack(const std::string& resourceNam
 	bottomStackArray[bottomStackElements] = size;
 //	bottomStackAllocations[bottomStackElements] = { size, resourceName };
 //	sharedStackAllocations[sharedStackElements] = { size, resourceName };
+	//std::cout << "Allocated " << size << " bytes to the bottom stack!" << std::endl;
+	std::cout << "Allocated " << resourceName << " to the bottom stack!" << " (" << size << " bytes)" << std::endl;
 	sharedStackAllocations.push_back({ size, resourceName });
 	bottomStackAllocations.push_back({ size, resourceName });
 	return nullptr;
@@ -71,6 +73,7 @@ void* DoubleEndedStackAllocator::allocTopStack(const std::string& resourceName, 
 	topStackElements++;
 	sharedStackElements++;
 	topStackArray[topStackElements] = size;
+	std::cout << "Allocated " << resourceName << " to the top stack!" << " (" << size << " bytes)" << std::endl;
 	//topStackAllocations[topStackElements] = { size, resourceName };
 	//sharedStackAllocations[sharedStackElements] = { size, resourceName };
 	sharedStackAllocations.push_back({ size, resourceName });
@@ -102,7 +105,7 @@ void* DoubleEndedStackAllocator::rollBackBottomStack(int dist)
 		}
 		this->popBottomStack(bottomStackArray[bottomStackElements]);
 	}
-	std::cout << "Rolled back by " << dist << "!" << std::endl;
+	std::cout << "Rolled back bottom stack by " << dist << " memory block(s)!" << std::endl;
 
 	return nullptr;
 }
@@ -117,7 +120,7 @@ void* DoubleEndedStackAllocator::rollBackTopStack(int dist)
 		}
 		this->popTopStack(topStackArray[topStackElements]);
 	}
-	std::cout << "Rolled back by " << dist << "!" << std::endl;
+	std::cout << "Rolled back top stack by " << dist << " memory block(s)!" << std::endl;
 	return nullptr;
 }
 
@@ -177,6 +180,8 @@ void* DoubleEndedStackAllocator::popBottomStack(size_t size)
 	bottomCurrentSize -= size;
 	bottomStackElements--;
 
+	std::cout << "Deallocated " << size << " bytes from the bottom stack!" << std::endl;
+
 	if (bottomStackElements > 0) {
 		bottomHead = new size_t(bottomStackArray[bottomStackElements]);
 	}
@@ -208,6 +213,10 @@ void* DoubleEndedStackAllocator::popTopStack(size_t size)
 			}
 		}
 	}
+
+
+	std::cout << "Deallocated " << size << " bytes from the top stack!" << std::endl;
+
 	topCurrentSize -= size;
 	topStackElements--;
 
