@@ -37,7 +37,7 @@ void SceneTwo::render()
 {
 	renderer->clearBackground(RED);
 	renderer->drawText("Welcome to scene two! ", 300, 300, 20, BLACK);
-	renderer->drawText("Press O to switch back to scene one!", 300, 600, 40, BLACK);
+//	renderer->drawText("Press O to switch back to scene one!", 300, 600, 40, BLACK);
 	debug();
 }
 

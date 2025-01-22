@@ -101,20 +101,23 @@ void SceneOne::render()
 {
 	renderer->clearBackground({34, 214, 208, 255});
 
+
+	//Toggling on/off workaround
 	if (keyHit == false) {
 		if (input->isKeyPressed(MUG_KEY_G))
 		{
 			keyHit = true;
-			//renderer->drawText("A is pressed", 10, 10, 20, BLACK);
 		}
 	}
 	else {
 		if (input->isKeyPressed(MUG_KEY_G))
 		{
+			//Turns off showing the text
 			keyHit = false;
 		}
 		
 		else {
+			//Turns on showing the text
 			renderer->drawText("G is pressed", 10, 10, 20, BLACK);
 		}
 	}
