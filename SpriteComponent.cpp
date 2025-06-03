@@ -50,7 +50,6 @@ Texture2D SpriteComponent::loadTexture(const char* filename, std::string givenNa
 {
 	try {
 		stack->allocTopStack(givenName, sizeof(Texture2D));
-		//Image img = LoadImageFromMemory(filename);
 		Image img = LoadImage(filename);
 		stack->allocTopStack(givenName + givenName, sizeof(img));
 		Texture2D texture = LoadTextureFromImage(img);

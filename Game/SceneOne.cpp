@@ -118,7 +118,7 @@ void SceneOne::render()
 		
 		else {
 			//Turns on showing the text
-			renderer->drawText("G is pressed", 10, 10, 20, BLACK);
+			renderer->drawText("G is pressed!", 10, 10, 20, BLACK);
 		}
 	}
 
