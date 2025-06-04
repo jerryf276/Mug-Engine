@@ -5,6 +5,7 @@ class MugMusicPlayer
 {
 public:
 	//Music
+	void playMusic(std::string);
 	void playMusic(Music);
 	void stopMusic(Music);
 	void pauseMusic(Music);
@@ -23,16 +24,24 @@ public:
 	void setMusic(Music);
 	Music getMusic();
 
-	void addMusic(const char* fileName, std::string name);
+	void addMusic(const char* fileName, std::string name, DoubleEndedStackAllocator* sAllocator);
 
 
 private:
-	Music music;
+	//Music music;
 	//MugMusicPlayer musicPlayer;
-	std::vector<Music> musics;
-	std::vector<std::string> musicNames;
+	//std::vector<Music> musics;\
+
+	std::vector<Song> musics;
+	//std::vector<std::string> musicNames;
 	//Music:
 	//Contains filename, name, and data
 protected:
 
+};
+
+struct Song {
+	Music song;
+	std::string name;
+	const char* fileName;
 };
