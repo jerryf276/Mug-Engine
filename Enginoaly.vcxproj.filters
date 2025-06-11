@@ -96,6 +96,9 @@
     <ClCompile Include="MugMusicPlayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MugSoundFXPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dependencies\ImGUI\rlImGui.h">
@@ -180,6 +183,9 @@
       <Filter>Header Files\Components</Filter>
     </ClInclude>
     <ClInclude Include="MugMusicPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MugSoundFXPlayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

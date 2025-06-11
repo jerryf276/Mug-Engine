@@ -1,6 +1,6 @@
 #include "MugMusicPlayer.h"
 
-void MugMusicPlayer::addMusic(const char* fileName, std::string name, DoubleEndedStackAllocator* sAllocator)
+void MugMusicPlayer::addMusic(char* fileName, std::string name, DoubleEndedStackAllocator* sAllocator)
 {
 	try {
 		sAllocator->allocBottomStack(name, (sizeof(Music) + sizeof(name) + sizeof(fileName)));
@@ -12,10 +12,9 @@ void MugMusicPlayer::addMusic(const char* fileName, std::string name, DoubleEnde
 
 	catch (std::runtime_error& e) {
 		std::cout << e.what() << std::endl;
-		
 	}
 
-	LoadMusicStream("Something has happened with the stack!");
+	LoadMusicStream("Something has happened with the stack! Music not added!");
 }
 
 void MugMusicPlayer::playMusic(std::string music)
@@ -103,13 +102,13 @@ void MugMusicPlayer::updateMusicStream(Music music)
 {
 	UpdateMusicStream(music);
 }
-
-void MugMusicPlayer::setMusic(Music muse)
-{
-	music = muse;
-}
-
-Music MugMusicPlayer::getMusic()
-{
-	return music;
-}
+//
+//void MugMusicPlayer::setMusic(Music muse)
+//{
+//	music = muse;
+//}
+//
+//Music MugMusicPlayer::getMusic()
+//{
+//	return music;
+//}

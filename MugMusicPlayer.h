@@ -1,6 +1,13 @@
 #include "raylib.h"
 #include "DoubleEndedStackAllocator.h"
 #include <vector>
+
+struct Song {
+	Music song;
+	std::string name;
+	char* fileName;
+};
+
 class MugMusicPlayer
 {
 public:
@@ -21,10 +28,10 @@ public:
 	float getMusicTimePlayed(Music music);
 	void updateMusicStream(Music music);
 
-	void setMusic(Music);
-	Music getMusic();
+	//void setMusic(Music);
+	//Music getMusic();
 
-	void addMusic(const char* fileName, std::string name, DoubleEndedStackAllocator* sAllocator);
+	void addMusic(char* fileName, std::string name, DoubleEndedStackAllocator* sAllocator);
 
 
 private:
@@ -38,10 +45,4 @@ private:
 	//Contains filename, name, and data
 protected:
 
-};
-
-struct Song {
-	Music song;
-	std::string name;
-	const char* fileName;
 };
