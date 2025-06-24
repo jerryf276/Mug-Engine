@@ -1,0 +1,3 @@
+REFERENCES:
+
+http://dmitrysoshnikov.com/compilers/writing-a-pool-allocator/ (Accessed 11/6/2025)

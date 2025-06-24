@@ -5,6 +5,8 @@
 #include "rlImGui.h"
 #include "UniquePointer.h"
 #include "Application.h"
+#include "MugMusicPlayer.h"
+#include "MugSoundFXPlayer.h"
 #include "Audio.h"
 #include "DoubleEndedStackAllocator.h"
 #include "GameObject.h"
