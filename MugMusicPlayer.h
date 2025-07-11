@@ -29,6 +29,8 @@ public:
 
 	void addMusic(char* fileName, std::string name, DoubleEndedStackAllocator* sAllocator);
 
+	bool isMusicPlaying(Music);
+
 
 private:
 	//Music music;

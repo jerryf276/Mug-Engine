@@ -27,6 +27,8 @@ public:
 	void unloadSound(std::string);
 
 	void addSound(char* fileName, std::string name, DoubleEndedStackAllocator* sAllocator);
+
+	bool isSoundPlaying(Sound);
 private:
 	std::vector<soundFX> soundEffects;
 protected:

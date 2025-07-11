@@ -17,6 +17,14 @@ void MugMusicPlayer::addMusic(char* fileName, std::string name, DoubleEndedStack
 	LoadMusicStream("Something has happened with the stack! Music not added!");
 }
 
+bool MugMusicPlayer::isMusicPlaying(Music music)
+{
+	if (isMusicPlaying(music)) {
+		return true;
+	}
+	return false;
+}
+
 void MugMusicPlayer::playMusic(std::string music)
 {
 	for (int i = 0; i < musics.size(); ++i) {
