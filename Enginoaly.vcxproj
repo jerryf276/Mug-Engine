@@ -143,6 +143,7 @@
     <ClCompile Include="MugMusicPlayer.cpp" />
     <ClCompile Include="MugSoundFXPlayer.cpp" />
     <ClCompile Include="PoolAllocator.cpp" />
+    <ClCompile Include="PoolAllocatorold.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="dependencies\ImGUI\imgui.cpp" />
     <ClCompile Include="dependencies\ImGUI\imgui_demo.cpp" />
@@ -172,6 +173,7 @@
     <ClInclude Include="MugMusicPlayer.h" />
     <ClInclude Include="MugSoundFXPlayer.h" />
     <ClInclude Include="PoolAllocator.h" />
+    <ClInclude Include="PoolAllocatorold.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="dependencies\ImGUI\imconfig.h" />
     <ClInclude Include="dependencies\ImGUI\imgui.h" />

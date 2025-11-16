@@ -99,6 +99,9 @@
     <ClCompile Include="MugSoundFXPlayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PoolAllocatorold.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="PoolAllocator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -189,6 +192,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MugSoundFXPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PoolAllocatorold.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PoolAllocator.h">
