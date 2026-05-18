@@ -22,7 +22,6 @@ public:
 
 	Sound getSound();
 	void setSound(Sound sound);
-
 private:
 	Sound sound;
 //	std::vector<Sound> sounds;
