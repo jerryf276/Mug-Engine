@@ -29,6 +29,10 @@ public:
 	// Return the index of the current frame in the vector.
 	int getFrameIndex() const { return current_frame; }
 
+	// Return the number of frames in the vector.
+	int getFrameCount() { return frames.size(); };
+
+
 	void setFrameIndex(int frameIndex);
 
 	bool hasFrameChanged();

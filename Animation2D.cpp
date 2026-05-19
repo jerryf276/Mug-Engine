@@ -17,21 +17,21 @@ void Animation2D::addFramesRow(Rectangle frameRect, int numFrames, int offset)
 
 Rectangle Animation2D::getCurrentFrame()
 {
-	//if (!h_flip && !v_flip)
-	//	return frames[current_frame].rect;
+	if (!h_flip && !v_flip)
+		return frames[current_frame].rect;
 
-	//Rectangle r = frames[current_frame].rect;
-	//if (h_flip && v_flip) {
-	//	//Look into this
-	//	return Rectangle{ {r.x}, {r.y}, {r.width}, {r.height} };
-	//}
-	//if (h_flip) {
-	//	//Look into this
-	//	return sf::IntRect{ {r.position.x + r.size.x, r.position.y}, {-(r.size.x), r.size.y} };
-	//}
+	Rectangle r = frames[current_frame].rect;
+	if (h_flip && v_flip) {
+		//Look into this
+		return { {r.x - r.width}, {r.y - r.height}, {r.width}, {r.height} };
+	}
+	if (h_flip) {
+		//Look into this
+		return { {r.x - r.width}, {r.y}, {r.width}, {r.height} };
+	}
 	//// v_flip case
 	////Look into this
-	//return sf::IntRect{ {r.position.x, r.position.y + r.size.y}, {r.size.x, -(r.size.y)} };
+	return { {r.x}, {r.y - r.height}, {r.width}, {r.height} };
 }
 
 void Animation2D::setFrameIndex(int frameIndex)
@@ -48,4 +48,84 @@ bool Animation2D::hasFrameChanged()
 		return true;
 	}
 	return false;
+}
+
+void Animation2D::setFrameSpeed(int frameIndex, float speed)
+{
+	frames[frameIndex].speed = speed;
+}
+
+float Animation2D::getFrameSpeed(int frameIndex)
+{
+	return frames[frameIndex].speed;
+}
+
+void Animation2D::setHorizontalFlip(bool flip)
+{
+	h_flip = flip;
+	frame_changed = true;
+}
+
+void Animation2D::setVerticalFlip(bool flip)
+{
+	v_flip = flip;
+	frame_changed = true;
+}
+
+void Animation2D::reset()
+{
+	current_frame = 0;
+	elapsed_time = 0.0f;
+	frame_changed = true;
+}
+
+void Animation2D::animate(float dt)
+{
+	if (!playing) return;
+
+	elapsed_time += (dt * getFrameSpeed(current_frame));
+	if (elapsed_time <= animation_speed) return;
+	elapsed_time -= animation_speed;
+
+	int frameCount = getFrameCount();
+
+	if (playing_forward) {
+		if (current_frame + 1 < frameCount) {
+			current_frame++;
+			frame_changed = true;
+			return;
+		}
+	}
+	else if (current_frame - 1 >= 0) {
+		current_frame--;
+		frame_changed = true;
+		return;
+	}
+
+	if (loop_type == AnimLoopType::NoLoop) {
+		playing = false;
+		return;
+	}
+
+	frame_changed = true;
+	if (loop_type == AnimLoopType::Loop) {
+		if (playing_forward) {
+			current_frame = 0;
+			return;
+		}
+		else {
+			current_frame = frameCount - 1;
+			return;
+		}
+	}
+
+	// boomerang case
+	playing_forward = !playing_forward;
+	if (playing_forward) {
+		current_frame = current_frame + 1;
+	}
+	else {
+		current_frame = current_frame - 1;
+	}
+	return;
 }

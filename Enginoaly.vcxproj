@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Animation2D.cpp" />
     <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Core.cpp" />
@@ -158,11 +159,11 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="SpriteComponent.cpp" />
     <ClCompile Include="StackAllocator.cpp" />
-    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TransformComponent.cpp" />
     <ClCompile Include="UniquePointer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation2D.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="Audio.h" />
     <ClInclude Include="Component.h" />
@@ -174,6 +175,7 @@
     <ClInclude Include="MugSoundFXPlayer.h" />
     <ClInclude Include="PoolAllocator.h" />
     <ClInclude Include="PoolAllocatorold.h" />
+    <ClInclude Include="raymath.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="dependencies\ImGUI\imconfig.h" />
     <ClInclude Include="dependencies\ImGUI\imgui.h" />
@@ -191,7 +193,6 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="SpriteComponent.h" />
     <ClInclude Include="StackAllocator.h" />
-    <ClInclude Include="Texture.h" />
     <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="UniquePointer.h" />
   </ItemGroup>
