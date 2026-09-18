@@ -10,7 +10,7 @@ int mainold(void)
     int screenHeight = 720;
  
 
-    InitWindow(screenWidth, screenHeight, "Enginoaly");
+    InitWindow(screenWidth, screenHeight, "Mug");
     InitAudioDevice();
     //Image testImage = LoadImage("Game/Assets/Images/Penguin-images-2/Animations/penguin_jump01.png");
    // Texture2D testTexture = LoadTextureFromImage(testImage);
@@ -19,7 +19,7 @@ int mainold(void)
 	Sound sound = LoadSound("Game/Assets/Audio/coin.wav");
     
     //UnloadImage(testImage);
-    SetTargetFPS(60);
+    SetTargetFPS(180);
    // IMGUI_CHECKVERSION();
 	//ImGui::CreateContext();
 	//IMGuiIO& io = ImGui::GetIO(); (void)io;

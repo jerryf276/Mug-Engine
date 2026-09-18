@@ -31,7 +31,7 @@ public:
 
 	// Return the number of frames in the vector.
 	int getFrameCount() { return frames.size(); };
-
+	 
 
 	void setFrameIndex(int frameIndex);
 

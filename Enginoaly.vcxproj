@@ -135,16 +135,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation2D.cpp" />
+    <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="DoubleEndedStackAllocator.cpp" />
     <ClCompile Include="Entry.cpp" />
     <ClCompile Include="InputComponent.cpp" />
+    <ClCompile Include="SingularLinkedList.cpp" />
     <ClCompile Include="MugMusicPlayer.cpp" />
     <ClCompile Include="MugSoundFXPlayer.cpp" />
     <ClCompile Include="PoolAllocator.cpp" />
-    <ClCompile Include="PoolAllocatorold.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="dependencies\ImGUI\imgui.cpp" />
     <ClCompile Include="dependencies\ImGUI\imgui_demo.cpp" />
@@ -164,17 +165,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation2D.h" />
+    <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="Audio.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="DoubleEndedStackAllocator.h" />
     <ClInclude Include="InputComponent.h" />
+    <ClInclude Include="SingularLinkedList.h" />
     <ClInclude Include="Mug.h" />
     <ClInclude Include="MugMusicPlayer.h" />
     <ClInclude Include="MugSoundFXPlayer.h" />
     <ClInclude Include="PoolAllocator.h" />
-    <ClInclude Include="PoolAllocatorold.h" />
     <ClInclude Include="raymath.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="dependencies\ImGUI\imconfig.h" />

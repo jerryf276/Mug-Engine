@@ -43,7 +43,6 @@ void SpriteComponent::render()
 
 void SpriteComponent::fixedStart()
 {
-
 }
 
 Texture2D SpriteComponent::loadTexture(const char* filename, std::string givenName, DoubleEndedStackAllocator* stack)
@@ -63,3 +62,5 @@ Texture2D SpriteComponent::loadTexture(const char* filename, std::string givenNa
 	}
 	return LoadTexture("There is issues with the stack!");
 }
+
+PoolAllocator SpriteComponent::allocator{ 8 };

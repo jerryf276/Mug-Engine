@@ -6,7 +6,7 @@ namespace mug {
 	Core::Core() : mugApp(mug::createApp(renderSystem, input))
 	{
 		renderSystem = new RenderSystem();
-		renderSystem->setTargetFPS(60);
+		renderSystem->setTargetFPS(180);
 		input = new Input();
 		//stackAllocator = new DoubleEndedStackAllocator(size_t(1000000));
 		

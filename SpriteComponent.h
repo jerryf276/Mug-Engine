@@ -1,5 +1,6 @@
 #pragma once
 #include "Component.h"
+#include "PoolAllocator.h"
 class SpriteComponent : public Component
 {
 public:
@@ -17,6 +18,15 @@ public:
 	//void setSpritePosition(Vector2 pos) { position = pos; }
 	//Vector2 getSpritePosition() { return position; }
 
+	static PoolAllocator allocator;
+
+	static void* operator new(size_t size) {
+		return allocator.allocate(size);
+	}
+
+	static void operator delete(void* ptr, size_t size) {
+		return allocator.deallocate(ptr, size);
+	}
 
 private:
 	//Vector2 position;
@@ -24,6 +34,7 @@ private:
 	Texture2D sprite;
 	const char* filename;
 	Texture2D loadTexture(const char* filename, std::string givenName, DoubleEndedStackAllocator* stack);
+
 protected:
 };
 

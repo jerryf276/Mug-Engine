@@ -5,10 +5,20 @@
 #include <iostream>
 #include "UniquePointer.h"
 #include "Input.h"
+#include "PoolAllocator.h"
+
 class Component;
 
 class GameObject
 {
+private:
+	//SmartPointer<Component> rawPointer;
+	UniquePointer<Component> rawPointer;
+	std::vector<Component*> game_Components;
+	bool alive;
+	std::string name;
+
+
 public:
 	GameObject();
 	GameObject(std::string name);
@@ -77,15 +87,21 @@ public:
 		alive = a;
 	}
 
-private:
-	//SmartPointer<Component> rawPointer;
-	UniquePointer<Component> rawPointer;
-	std::vector<Component*> game_Components;
-	bool alive;
-	std::string name;
+	//static PoolAllocator allocator;
+
+	//static void* operator new(size_t size) {
+	//	return allocator.allocate(size);
+	//}
+
+	//static void operator delete(void* ptr, size_t size) {
+	//	return allocator.deallocate(ptr, size);
+	//}
 
 //	int gameID;
 protected:
 
 };
+
+//PoolAllocator GameObject::allocator{ 8 };
+
 

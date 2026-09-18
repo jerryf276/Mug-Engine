@@ -22,15 +22,12 @@ Rectangle Animation2D::getCurrentFrame()
 
 	Rectangle r = frames[current_frame].rect;
 	if (h_flip && v_flip) {
-		//Look into this
 		return { {r.x - r.width}, {r.y - r.height}, {r.width}, {r.height} };
 	}
 	if (h_flip) {
-		//Look into this
 		return { {r.x - r.width}, {r.y}, {r.width}, {r.height} };
 	}
 	//// v_flip case
-	////Look into this
 	return { {r.x}, {r.y - r.height}, {r.width}, {r.height} };
 }
 
