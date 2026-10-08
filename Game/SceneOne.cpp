@@ -15,7 +15,7 @@ SceneOne::SceneOne(Input* input, RenderSystem* renderSys, GameState* state, Soun
 	//soundFX->loadSound("Game/Assets/Audio/coin.wav", "coin", stack);
 	//musicPlayer->loadMusicStream("Game/Assets/Audio/cisco-default-hold-music-[hq-mono-audio]-opus-number-1-made-with-Voicemod.mp3", "music", stack);
 
-	music->setMusic(music->loadMusicStream("Game/Assets/Audio/Cipher2.mp3", "music", stack));
+	music->setMusic(music->loadMusicStream("Game/Assets/Audio/purple.mp3", "music", stack));
 	//stack->allocBottomStack("music", sizeof(music));
 
 
@@ -37,7 +37,7 @@ void SceneOne::initialise()
 {
 	SpriteComponent* spriteComponent = player->AddComponent<SpriteComponent>();
 	if (spriteComponent) {
-		spriteComponent->initialise("Game/Assets/Images/Penguin-images-2/Animations/penguin_jump01.png", "Penguin Sprite", stack);
+		spriteComponent->initialise("Game/Assets/Images/purpleHomer.png", "Penguin Sprite", stack);
 	}
 
 	TransformComponent* transformComponent = player->AddComponent<TransformComponent>();
@@ -99,7 +99,7 @@ void SceneOne::update(float dt)
 
 void SceneOne::render()
 {
-	renderer->clearBackground({34, 214, 208, 255});
+	renderer->clearBackground({145, 0, 255, 255});
 
 
 	//Toggling on/off workaround
